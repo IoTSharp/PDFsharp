@@ -1,147 +1,159 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-	<TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
-    <DefineConstants>$(DefineConstants);CORE;CORE_WITH_GDI</DefineConstants>
-    <AssemblyName>PdfSharp.Charting</AssemblyName>
-    <PackageId>PDFSharp.Charting.NetStandard2</PackageId>
-    <VersionSuffix Condition="'$(VersionSuffix)' == ''">0</VersionSuffix>
-    <Version>1.51.5185.3</Version>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-    <RootNamespace>PdfSharp.Charting</RootNamespace>
-    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-    <PackageProjectUrl>https://github.com/LionelVallet/PDFsharp</PackageProjectUrl>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>StrongnameKey.snk</AssemblyOriginatorKeyFile>
-    <Authors>empira Software GmbH, Lionel Vallet</Authors>
-    <PackageTags>PDFSharp, NET, Standard, Core, PDF, Charting</PackageTags>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageIcon>icon.png</PackageIcon>
-    <Description>PDFsharp is the Open Source .NET library that easily creates and processes PDF documents on the fly from any .NET language. The same drawing routines can be used to create PDF documents, draw on the screen, or send output to any printer.
+	<PropertyGroup>
+		<TargetFrameworks>net472;netstandard2.0;net8.0;net10.0</TargetFrameworks>
+		<DefineConstants>$(DefineConstants);CORE;CORE_WITH_GDI</DefineConstants>
+		<AssemblyName>PdfSharp.Charting</AssemblyName>
+		<PackageId>PDFSharp.Charting.NetStandard2</PackageId>
+		<VersionSuffix Condition="'$(VersionSuffix)' == ''">0</VersionSuffix>
+		<Version>1.51.5185.3</Version>
+		<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+		<GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+		<GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+		<GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+		<RootNamespace>PdfSharp.Charting</RootNamespace>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<PackageProjectUrl>https://github.com/LionelVallet/PDFsharp</PackageProjectUrl>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>StrongnameKey.snk</AssemblyOriginatorKeyFile>
+		<Authors>empira Software GmbH, Lionel Vallet</Authors>
+		<PackageTags>PDFSharp, NET, Standard, Core, PDF, Charting</PackageTags>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageIcon>icon.png</PackageIcon>
+		<Description>
+			PDFsharp is the Open Source .NET library that easily creates and processes PDF documents on the fly from any .NET language. The same drawing routines can be used to create PDF documents, draw on the screen, or send output to any printer.
 
-This is the .NET Standard version of the PDFsharp PDF Core package. See Project Information for details.</Description>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="8.0.4" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\PdfSharp\root\VersionInfo.cs">
-      <Link>root\VersionInfo.cs</Link>
-    </Compile>
-    <Compile Include="Charting.Renderers\AreaChartRenderer.cs" />
-    <Compile Include="Charting.Renderers\AreaPlotAreaRenderer.cs" />
-    <Compile Include="Charting.Renderers\AxisRenderer.cs" />
-    <Compile Include="Charting.Renderers\AxisTitleRenderer.cs" />
-    <Compile Include="Charting.Renderers\BarChartRenderer.cs" />
-    <Compile Include="Charting.Renderers\BarClusteredLegendRenderer.cs" />
-    <Compile Include="Charting.Renderers\BarClusteredPlotAreaRenderer.cs" />
-    <Compile Include="Charting.Renderers\BarDataLabelRenderer.cs" />
-    <Compile Include="Charting.Renderers\BarGridlinesRenderer.cs" />
-    <Compile Include="Charting.Renderers\BarPlotAreaRenderer.cs" />
-    <Compile Include="Charting.Renderers\BarStackedPlotAreaRenderer.cs" />
-    <Compile Include="Charting.Renderers\ChartRenderer.cs" />
-    <Compile Include="Charting.Renderers\Colors.cs" />
-    <Compile Include="Charting.Renderers\ColumnChartRenderer.cs" />
-    <Compile Include="Charting.Renderers\ColumnClusteredPlotAreaRenderer.cs" />
-    <Compile Include="Charting.Renderers\ColumnDataLabelRenderer.cs" />
-    <Compile Include="Charting.Renderers\ColumnLikeChartRenderer.cs" />
-    <Compile Include="Charting.Renderers\ColumnLikeGridlinesRenderer.cs" />
-    <Compile Include="Charting.Renderers\ColumnLikeLegendRenderer.cs" />
-    <Compile Include="Charting.Renderers\ColumnLikePlotAreaRenderer.cs" />
-    <Compile Include="Charting.Renderers\ColumnPlotAreaRenderer.cs" />
-    <Compile Include="Charting.Renderers\ColumnStackedPlotAreaRenderer.cs" />
-    <Compile Include="Charting.Renderers\CombinationChartRenderer.cs" />
-    <Compile Include="Charting.Renderers\Converter.cs" />
-    <Compile Include="Charting.Renderers\DataLabelRenderer.cs" />
-    <Compile Include="Charting.Renderers\GridlinesRenderer.cs" />
-    <Compile Include="Charting.Renderers\HorizontalStackedYAxisRenderer.cs" />
-    <Compile Include="Charting.Renderers\HorizontalXAxisRenderer.cs" />
-    <Compile Include="Charting.Renderers\HorizontalYAxisRenderer.cs" />
-    <Compile Include="Charting.Renderers\LegendEntryRenderer.cs" />
-    <Compile Include="Charting.Renderers\LegendRenderer.cs" />
-    <Compile Include="Charting.Renderers\LineChartRenderer.cs" />
-    <Compile Include="Charting.Renderers\LineFormatRenderer.cs" />
-    <Compile Include="Charting.Renderers\LinePlotAreaRenderer.cs" />
-    <Compile Include="Charting.Renderers\MarkerRenderer.cs" />
-    <Compile Include="Charting.Renderers\PieChartRenderer.cs" />
-    <Compile Include="Charting.Renderers\PieClosedPlotAreaRenderer.cs" />
-    <Compile Include="Charting.Renderers\PieDataLabelRenderer.cs" />
-    <Compile Include="Charting.Renderers\PieExplodedPlotAreaRenderer.cs" />
-    <Compile Include="Charting.Renderers\PieLegendRenderer.cs" />
-    <Compile Include="Charting.Renderers\PiePlotAreaRenderer.cs" />
-    <Compile Include="Charting.Renderers\PlotAreaBorderRenderer.cs" />
-    <Compile Include="Charting.Renderers\PlotAreaRenderer.cs" />
-    <Compile Include="Charting.Renderers\Renderer.cs" />
-    <Compile Include="Charting.Renderers\RendererInfo.cs" />
-    <Compile Include="Charting.Renderers\RendererParameters.cs" />
-    <Compile Include="Charting.Renderers\VerticalStackedYAxisRenderer.cs" />
-    <Compile Include="Charting.Renderers\VerticalXAxisRenderer.cs" />
-    <Compile Include="Charting.Renderers\VerticalYAxisRenderer.cs" />
-    <Compile Include="Charting.Renderers\WallRenderer.cs" />
-    <Compile Include="Charting.Renderers\XAxisRenderer.cs" />
-    <Compile Include="Charting.Renderers\YAxisRenderer.cs" />
-    <Compile Include="Charting\Axis.cs" />
-    <Compile Include="Charting\AxisTitle.cs" />
-    <Compile Include="Charting\Chart.cs" />
-    <Compile Include="Charting\ChartFrame.cs" />
-    <Compile Include="Charting\ChartObject.cs" />
-    <Compile Include="Charting\DataLabel.cs" />
-    <Compile Include="Charting\DocumentObject.cs" />
-    <Compile Include="Charting\DocumentObjectCollection.cs" />
-    <Compile Include="Charting\enums\BlankType.cs" />
-    <Compile Include="Charting\enums\ChartType.cs" />
-    <Compile Include="Charting\enums\DataLabelPosition.cs" />
-    <Compile Include="Charting\enums\DataLabelType.cs" />
-    <Compile Include="Charting\enums\DockingType.cs" />
-    <Compile Include="Charting\enums\FontProperties.cs" />
-    <Compile Include="Charting\enums\HorizontalAlignment.cs" />
-    <Compile Include="Charting\enums\LineStyle.cs" />
-    <Compile Include="Charting\enums\MarkerStyle.cs" />
-    <Compile Include="Charting\enums\TickMarkType.cs" />
-    <Compile Include="Charting\enums\Underline.cs" />
-    <Compile Include="Charting\enums\VerticalAlignment.cs" />
-    <Compile Include="Charting\FillFormat.cs" />
-    <Compile Include="Charting\Font.cs" />
-    <Compile Include="Charting\Gridlines.cs" />
-    <Compile Include="Charting\Legend.cs" />
-    <Compile Include="Charting\LineFormat.cs" />
-    <Compile Include="Charting\PlotArea.cs" />
-    <Compile Include="Charting\Point.cs" />
-    <Compile Include="Charting\PSCSR.cs" />
-    <Compile Include="Charting\Series.cs" />
-    <Compile Include="Charting\SeriesCollection.cs" />
-    <Compile Include="Charting\SeriesElements.cs" />
-    <Compile Include="Charting\TickLabels.cs" />
-    <Compile Include="Charting\XSeries.cs" />
-    <Compile Include="Charting\XSeriesElements.cs" />
-    <Compile Include="Charting\XValue.cs" />
-    <Compile Include="Charting\XValues.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Messages.de.restext" />
-    <EmbeddedResource Include="Resources\Messages.restext" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PdfSharp\PdfSharp.csproj">
-      <Project>{5a6055bc-bf86-4fdd-9f62-0109db7a303b}</Project>
-      <Name>PdfSharp</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\icon.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-    <None Include="..\..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+			This is the .NET Standard version of the PDFsharp PDF Core package. See Project Information for details.
+		</Description>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+	</PropertyGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+		<PackageReference Include="System.Drawing.Common" Version="8.0.*" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+		<PackageReference Include="System.Drawing.Common" Version="8.0.*" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+		<PackageReference Include="System.Drawing.Common" Version="10.0.*" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="..\PdfSharp\root\VersionInfo.cs">
+			<Link>root\VersionInfo.cs</Link>
+		</Compile>
+		<Compile Include="Charting.Renderers\AreaChartRenderer.cs" />
+		<Compile Include="Charting.Renderers\AreaPlotAreaRenderer.cs" />
+		<Compile Include="Charting.Renderers\AxisRenderer.cs" />
+		<Compile Include="Charting.Renderers\AxisTitleRenderer.cs" />
+		<Compile Include="Charting.Renderers\BarChartRenderer.cs" />
+		<Compile Include="Charting.Renderers\BarClusteredLegendRenderer.cs" />
+		<Compile Include="Charting.Renderers\BarClusteredPlotAreaRenderer.cs" />
+		<Compile Include="Charting.Renderers\BarDataLabelRenderer.cs" />
+		<Compile Include="Charting.Renderers\BarGridlinesRenderer.cs" />
+		<Compile Include="Charting.Renderers\BarPlotAreaRenderer.cs" />
+		<Compile Include="Charting.Renderers\BarStackedPlotAreaRenderer.cs" />
+		<Compile Include="Charting.Renderers\ChartRenderer.cs" />
+		<Compile Include="Charting.Renderers\Colors.cs" />
+		<Compile Include="Charting.Renderers\ColumnChartRenderer.cs" />
+		<Compile Include="Charting.Renderers\ColumnClusteredPlotAreaRenderer.cs" />
+		<Compile Include="Charting.Renderers\ColumnDataLabelRenderer.cs" />
+		<Compile Include="Charting.Renderers\ColumnLikeChartRenderer.cs" />
+		<Compile Include="Charting.Renderers\ColumnLikeGridlinesRenderer.cs" />
+		<Compile Include="Charting.Renderers\ColumnLikeLegendRenderer.cs" />
+		<Compile Include="Charting.Renderers\ColumnLikePlotAreaRenderer.cs" />
+		<Compile Include="Charting.Renderers\ColumnPlotAreaRenderer.cs" />
+		<Compile Include="Charting.Renderers\ColumnStackedPlotAreaRenderer.cs" />
+		<Compile Include="Charting.Renderers\CombinationChartRenderer.cs" />
+		<Compile Include="Charting.Renderers\Converter.cs" />
+		<Compile Include="Charting.Renderers\DataLabelRenderer.cs" />
+		<Compile Include="Charting.Renderers\GridlinesRenderer.cs" />
+		<Compile Include="Charting.Renderers\HorizontalStackedYAxisRenderer.cs" />
+		<Compile Include="Charting.Renderers\HorizontalXAxisRenderer.cs" />
+		<Compile Include="Charting.Renderers\HorizontalYAxisRenderer.cs" />
+		<Compile Include="Charting.Renderers\LegendEntryRenderer.cs" />
+		<Compile Include="Charting.Renderers\LegendRenderer.cs" />
+		<Compile Include="Charting.Renderers\LineChartRenderer.cs" />
+		<Compile Include="Charting.Renderers\LineFormatRenderer.cs" />
+		<Compile Include="Charting.Renderers\LinePlotAreaRenderer.cs" />
+		<Compile Include="Charting.Renderers\MarkerRenderer.cs" />
+		<Compile Include="Charting.Renderers\PieChartRenderer.cs" />
+		<Compile Include="Charting.Renderers\PieClosedPlotAreaRenderer.cs" />
+		<Compile Include="Charting.Renderers\PieDataLabelRenderer.cs" />
+		<Compile Include="Charting.Renderers\PieExplodedPlotAreaRenderer.cs" />
+		<Compile Include="Charting.Renderers\PieLegendRenderer.cs" />
+		<Compile Include="Charting.Renderers\PiePlotAreaRenderer.cs" />
+		<Compile Include="Charting.Renderers\PlotAreaBorderRenderer.cs" />
+		<Compile Include="Charting.Renderers\PlotAreaRenderer.cs" />
+		<Compile Include="Charting.Renderers\Renderer.cs" />
+		<Compile Include="Charting.Renderers\RendererInfo.cs" />
+		<Compile Include="Charting.Renderers\RendererParameters.cs" />
+		<Compile Include="Charting.Renderers\VerticalStackedYAxisRenderer.cs" />
+		<Compile Include="Charting.Renderers\VerticalXAxisRenderer.cs" />
+		<Compile Include="Charting.Renderers\VerticalYAxisRenderer.cs" />
+		<Compile Include="Charting.Renderers\WallRenderer.cs" />
+		<Compile Include="Charting.Renderers\XAxisRenderer.cs" />
+		<Compile Include="Charting.Renderers\YAxisRenderer.cs" />
+		<Compile Include="Charting\Axis.cs" />
+		<Compile Include="Charting\AxisTitle.cs" />
+		<Compile Include="Charting\Chart.cs" />
+		<Compile Include="Charting\ChartFrame.cs" />
+		<Compile Include="Charting\ChartObject.cs" />
+		<Compile Include="Charting\DataLabel.cs" />
+		<Compile Include="Charting\DocumentObject.cs" />
+		<Compile Include="Charting\DocumentObjectCollection.cs" />
+		<Compile Include="Charting\enums\BlankType.cs" />
+		<Compile Include="Charting\enums\ChartType.cs" />
+		<Compile Include="Charting\enums\DataLabelPosition.cs" />
+		<Compile Include="Charting\enums\DataLabelType.cs" />
+		<Compile Include="Charting\enums\DockingType.cs" />
+		<Compile Include="Charting\enums\FontProperties.cs" />
+		<Compile Include="Charting\enums\HorizontalAlignment.cs" />
+		<Compile Include="Charting\enums\LineStyle.cs" />
+		<Compile Include="Charting\enums\MarkerStyle.cs" />
+		<Compile Include="Charting\enums\TickMarkType.cs" />
+		<Compile Include="Charting\enums\Underline.cs" />
+		<Compile Include="Charting\enums\VerticalAlignment.cs" />
+		<Compile Include="Charting\FillFormat.cs" />
+		<Compile Include="Charting\Font.cs" />
+		<Compile Include="Charting\Gridlines.cs" />
+		<Compile Include="Charting\Legend.cs" />
+		<Compile Include="Charting\LineFormat.cs" />
+		<Compile Include="Charting\PlotArea.cs" />
+		<Compile Include="Charting\Point.cs" />
+		<Compile Include="Charting\PSCSR.cs" />
+		<Compile Include="Charting\Series.cs" />
+		<Compile Include="Charting\SeriesCollection.cs" />
+		<Compile Include="Charting\SeriesElements.cs" />
+		<Compile Include="Charting\TickLabels.cs" />
+		<Compile Include="Charting\XSeries.cs" />
+		<Compile Include="Charting\XSeriesElements.cs" />
+		<Compile Include="Charting\XValue.cs" />
+		<Compile Include="Charting\XValues.cs" />
+		<Compile Include="Properties\AssemblyInfo.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\Messages.de.restext" />
+		<EmbeddedResource Include="Resources\Messages.restext" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\PdfSharp\PdfSharp.csproj">
+			<Project>{5a6055bc-bf86-4fdd-9f62-0109db7a303b}</Project>
+			<Name>PdfSharp</Name>
+		</ProjectReference>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\icon.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
 </Project>
